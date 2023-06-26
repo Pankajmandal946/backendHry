@@ -1,0 +1,10 @@
+CRITICAL - 2023-01-23 05:22:33 --> Call to undefined method App\Controllers\sitecontrollers::initController()
+in SYSTEMPATH/CodeIgniter.php on line 907.
+ 1 SYSTEMPATH/CodeIgniter.php(490): CodeIgniter\CodeIgniter->createController()
+ 2 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest()
+ 3 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-01-23 05:23:58 --> Call to undefined method App\Controllers\sitecontrollers::initController()
+in SYSTEMPATH/CodeIgniter.php on line 907.
+ 1 SYSTEMPATH/CodeIgniter.php(490): CodeIgniter\CodeIgniter->createController()
+ 2 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest()
+ 3 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
