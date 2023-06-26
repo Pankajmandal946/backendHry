@@ -34,6 +34,7 @@ $routes->get('/', 'Home::index');
 $routes->get('/simple', 'sitecontrollers::simple');
 $routes->get('/about-us', 'sitecontrollers::about');
 $routes->get('/Dashboard', 'admin::Dashboard');
+$routes->get('/Home', 'home::Home');
 
 
 /*
