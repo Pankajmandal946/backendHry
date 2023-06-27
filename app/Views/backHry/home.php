@@ -20,11 +20,12 @@
 
     <!-- Main content -->
     <section class="content">
+        <!-- container-fluid -->
         <div class="container-fluid">
-            <!-- Small boxes (Stat box) -->
+            <!-- row -->
             <div class="row">
-                <div class="col-lg-3 col-6">
-                    <!-- small box -->
+                <!-- New Orders -->
+                <!-- <div class="col-lg-3 col-6">
                     <div class="small-box bg-info">
                         <div class="inner">
                             <h3>150</h3>
@@ -36,11 +37,11 @@
                         </div>
                         <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
                     </div>
-                </div>
-                <!-- ./col -->
-                <div class="col-lg-3 col-6">
-                    <!-- small box -->
-                    <div class="small-box bg-success">
+                </div> -->
+                <!-- ./New Orders -->
+                <!-- Bounce Rate -->
+                <!-- <div class="col-lg-3 col-6">
+                   <div class="small-box bg-success">
                         <div class="inner">
                             <h3>53<sup style="font-size: 20px">%</sup></h3>
 
@@ -51,11 +52,11 @@
                         </div>
                         <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
                     </div>
-                </div>
-                <!-- ./col -->
-                <div class="col-lg-3 col-6">
-                    <!-- small box -->
-                    <div class="small-box bg-warning">
+                </div> -->
+                <!-- ./Bounce Rate -->
+                <!-- User Registrations -->
+                <!-- <div class="col-lg-3 col-6">
+                   <div class="small-box bg-warning">
                         <div class="inner">
                             <h3>44</h3>
 
@@ -66,10 +67,10 @@
                         </div>
                         <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
                     </div>
-                </div>
-                <!-- ./col -->
-                <div class="col-lg-3 col-6">
-                    <!-- small box -->
+                </div> -->
+                <!-- ./User Registrations -->
+                <!-- Unique Visitors -->
+                <!-- <div class="col-lg-3 col-6">
                     <div class="small-box bg-danger">
                         <div class="inner">
                             <h3>65</h3>
@@ -81,11 +82,12 @@
                         </div>
                         <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
                     </div>
-                </div>
-                <!-- ./col -->
+                </div> -->
+                <!-- ./Unique Visitors -->
             </div>
             <!-- /.row -->
-        </div><!-- /.container-fluid -->
+        </div>
+        <!-- /.container-fluid -->
     </section>
     <!-- /.content -->
 </div>
