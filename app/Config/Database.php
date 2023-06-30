@@ -27,9 +27,9 @@ class Database extends Config
     public array $default = [
         'DSN'      => '',
         'hostname' => 'localhost',
-        'username' => '',
+        'username' => 'root',
         'password' => '',
-        'database' => '',
+        'database' => 'shop_H',
         'DBDriver' => 'MySQLi',
         'DBPrefix' => '',
         'pConnect' => false,
@@ -81,4 +81,19 @@ class Database extends Config
             $this->defaultGroup = 'tests';
         }
     }
+
+    /** 
+	 * The PDO instance.
+	 * @var PDO 
+	 */
+	protected $db;
+	
+	/** 
+	 * Prepared statement for the insert query.
+	 * @var PDOStatement 
+	 */
+	protected $preparedInsert;
+	
+	/** This appender does not require a layout. */
+	protected $requiresLayout = false;
 }

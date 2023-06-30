@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <!-- <?= base_url() ?> -->
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -35,3 +36,12 @@
         <div class="preloader flex-column justify-content-center align-items-center">
             <img class="animation__shake" src="<?= base_url() ?>/theme/dist/img/AdminLTELogo.png" alt="AdminLTELogo" height="60" width="60">
         </div>
+
+        <?php
+        // session_start();
+        // if (!isset($_SESSION['hryS_user_id'])) {
+        //     header("location: index.php");
+        //     die;
+        // }
+
+        ?>

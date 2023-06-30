@@ -4,12 +4,13 @@ namespace App\Controllers;
 
 class home extends BaseController
 {
-   public function Home(){
-    echo view("include/header");
-    echo  view("include/navbar");     
-    echo view("include/sidebar");
-    echo view("backHry/home");
-    echo view("include/footerJs");
-    echo view("include/footer");
+   public function Home()
+   {
+      return view("include/header")
+         .  view("include/navbar")
+         . view("include/sidebar")
+         . view("backHry/home")
+         . view("include/footerJs")
+         . view("include/footer");
    }
 }
