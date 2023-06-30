@@ -81,19 +81,4 @@ class Database extends Config
             $this->defaultGroup = 'tests';
         }
     }
-
-    /** 
-	 * The PDO instance.
-	 * @var PDO 
-	 */
-	protected $db;
-	
-	/** 
-	 * Prepared statement for the insert query.
-	 * @var PDOStatement 
-	 */
-	protected $preparedInsert;
-	
-	/** This appender does not require a layout. */
-	protected $requiresLayout = false;
 }
