@@ -11,7 +11,6 @@ class User_login extends Model
 
     function __construct()
     {
-        // $db[] = \Config\Database::connect();
         parent::__construct();
         $this->user_login_id = "";
         $this->user_id = 0;
@@ -25,19 +24,36 @@ class User_login extends Model
         $this->created_by = 0;
         $this->updated_by = 0;
         $this->table_name = "user_login";
-        $this->db = new Database();
-        $this->conn = $this->db;
+        $this->db = \Config\Database::connect();
     }
 
     function validate_login()
     {
         $data = [
-            'username'  => $this->username,
+            'username'  => $this->username
+        ];
+        $data1 = [
             'is_active' => 1
         ];
         
-        // $query   = $this->conn->query("SELECT user_login_id, " . $this->table_name . ".user_id, name, email_id, mobile_no, username,user_type.user_type, password, default_password_change FROM " . $this->table_name . " INNER JOIN user ON (" . $this->table_name . ".user_id=user.user_id) INNER JOIN user_type ON (user.user_type_id=user_type.user_type_id) WHERE username = :username AND " . $this->table_name . ".is_active=:is_active");
-       
+        $builder = $this->db->table($this->table_name);
+        $builder->select('user_login_id, "'.$this->table_name.'".user_id, name, email_id, mobile_no, username,user_type.user_type, password, default_password_change');
+        $builder->from($this->table_name);
+        $builder->join('user', 'user_login.user_id=user.user_id', 'inner');
+        $builder->join('user_type', 'user.user_type_id=user_type.user_type_id', 'inner');
+        $builder->where('username', $data);
+        $builder->where('"'.$this->table_name.'".is_active', $data1);
+        // $res   = $this->db->query("SELECT user_login_id, ".$this->table_name.".user_id, name, email_id, mobile_no, username,user_type.user_type, password, default_password_change FROM ".$this->table_name." INNER JOIN user ON (".$this->table_name.".user_id=user.user_id) INNER JOIN user_type ON (user.user_type_id=user_type.user_type_id) WHERE username = :username AND ".$this->table_name.".is_active=:is_active");
+        // echo $builder;exit;
+        print_r($builder);exit;
+        // print_r($builder);exit;
+        // $query->execute($data);
+        // $count = $stmt->rowCount();
+        // $row = $stmt->fetch();
+        // // $debug_query = $stmt->_debugQuery();
+        // // echo $debug_query;exit;
+        // // print_r($row);exit;
+        // $stmt->closeCursor();
     }
 }
 /*

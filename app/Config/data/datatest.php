@@ -20,6 +20,7 @@ class Database extends Config
      * use if no other is specified.
      */
     public string $defaultGroup = 'default';
+    // public string $defaultGroup = 'pankaj';
 
     /**
      * The default database connection.
@@ -27,9 +28,9 @@ class Database extends Config
     public array $default = [
         'DSN'      => '',
         'hostname' => 'localhost',
-        'username' => '',
+        'username' => 'root',
         'password' => '',
-        'database' => '',
+        'database' => 'shop_H',
         'DBDriver' => 'MySQLi',
         'DBPrefix' => '',
         'pConnect' => false,
@@ -70,15 +71,27 @@ class Database extends Config
         'busyTimeout' => 1000,
     ];
 
+
     public function __construct()
     {
         parent::__construct();
 
+        if (ENVIRONMENT === 'testing') {
+            $this->defaultGroup = 'default';
+        }
+
+        $array = json_decode($this->default['encrypt'], true);
+        if (is_array($array)) {
+            $this->default['encrypt'] = $array;
+        }
         // Ensure that we always set the database group to 'tests' if
         // we are currently running an automated test suite, so that
-        // we don't overwrite live data on accident.
-        if (ENVIRONMENT === 'testing') {
-            $this->defaultGroup = 'tests';
-        }
+        //we don't overwrite live data on accident.
+
+        /* 
+            if (ENVIRONMENT === 'testing') {
+                $this->defaultGroup = 'tests';
+            }
+        */ 
     }
 }

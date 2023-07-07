@@ -1,10 +1,4 @@
-<?php
-// session_start();
-// if (isset($_SESSION['hryS_user_id'])) {
-//   header("location: home.php");
-//   die;
-// }
-?>
+
 <!DOCTYPE html>
 <html lang="en">
 
