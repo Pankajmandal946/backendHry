@@ -30,13 +30,15 @@ $routes->set404Override();
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
 // $routes->get('/', 'Home::index');
-$routes->match(['get', 'post'],'/', 'Login::Login');
+// $routes->match(['get', 'post'],'/simple', 'sitecontrollers::simple');
+// $routes->match(['get', 'post'],'/about-us', 'sitecontrollers::about');
+// $routes->match(['get', 'post'],'/Dashboard', 'admin::Dashboard');
 
-$routes->match(['get', 'post'],'/simple', 'sitecontrollers::simple');
-$routes->match(['get', 'post'],'/about-us', 'sitecontrollers::about');
-$routes->match(['get', 'post'],'/Dashboard', 'admin::Dashboard');
-$routes->match(['get', 'post'],'/Home', 'home::Home');
-$routes->match(['get', 'post'],'/validation_login', 'Login::validation_login');
+$routes->match(['get', 'post'],'/', 'Login::Login', ['filter' => 'noauth']);
+$routes->match(['get', 'post'],'/validation_login', 'Login::validation_login',['filter' => 'noauth']);
+
+// $routes->match(['get', 'post'], '/Dashboard', 'Home::Dashboard', ['filter' => 'auth']);
+$routes->match(['get', 'post'], '/Home', 'Home::Home', ['filter' => 'auth']);
 
 
 /*

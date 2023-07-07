@@ -19,8 +19,8 @@ class Database extends Config
      * Lets you choose which connection group to
      * use if no other is specified.
      */
-    // public string $defaultGroup = 'default';
-    public string $defaultGroup = 'pankaj';
+    public string $defaultGroup = 'default';
+    // public string $defaultGroup = 'pankaj';
 
     /**
      * The default database connection.
@@ -71,31 +71,13 @@ class Database extends Config
         'busyTimeout' => 1000,
     ];
 
-    public array $pankaj = [
-        'DSN'      => '',
-        'hostname' => 'localhost',
-        'username' => 'root',
-        'password' => '',
-        'database' => 'shop_H',
-        'DBDriver' => 'MySQLi',
-        'DBPrefix' => '',
-        'pConnect' => true,
-        'DBDebug'  => true,
-        'charset'  => 'utf8',
-        'DBCollat' => 'utf8_general_ci',
-        'swapPre'  => '',
-        'compress' => false,
-        'encrypt'  => false,
-        'strictOn' => false,
-        'failover' => [],
-    ];
 
     public function __construct()
     {
         parent::__construct();
 
         if (ENVIRONMENT === 'testing') {
-            $this->defaultGroup = 'pankaj';
+            $this->defaultGroup = 'default';
         }
 
         $array = json_decode($this->default['encrypt'], true);
