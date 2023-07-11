@@ -257,7 +257,8 @@
               'password': password
             }),
             success: function(response) {
-              window.location.href = "<?= base_url() ?>/Home";
+              console.log(response);
+              // window.location.href = "http://localhost/pankaj/backendHry//Home";
             },
             error: function(jqXHR, exception) {
               var msg = '';
@@ -286,6 +287,7 @@
             }
           });
         };
+        return false;
       });
     });
 

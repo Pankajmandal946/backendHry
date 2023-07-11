@@ -11,6 +11,7 @@ class User_login extends Model
 
     function __construct()
     {
+        $db = \Config\Database::connect();
         parent::__construct();
         $this->user_login_id = "";
         $this->user_id = 0;
@@ -23,8 +24,9 @@ class User_login extends Model
         $this->is_active = 1;
         $this->created_by = 0;
         $this->updated_by = 0;
-        $this->table_name = "user_login";
         $this->db = \Config\Database::connect();
+        $this->table_name = "user_login" ; // $this->db->table('user_login'); 
+        
     }
 
     function validate_login()
@@ -34,12 +36,12 @@ class User_login extends Model
 
         $query   = $this->db->query("SELECT user_login_id, " . $this->table_name . ".user_id, name, email_id, mobile_no, username,user_type.user_type, password, default_password_change FROM " . $this->table_name . " INNER JOIN user ON (" . $this->table_name . ".user_id=user.user_id) INNER JOIN user_type ON (user.user_type_id=user_type.user_type_id) WHERE username = '$user' AND " . $this->table_name . ".is_active='$is_act'");
         $row   = $query->getRowArray();
-        $this->db->close();
+        // print_r($row);exit;
         if(isset($row) && count($row)>0) {
             if($this->validate_password($this->password, $row['password'])) {
-                // print_r($row);exit;
                 if($row['default_password_change']==1) {
-
+                    print_r($row);exit;
+                    date_default_timezone_set("Asia/Calcutta");
                     $user_login_id = $row['user_login_id'];
                     $last_login_time = date('Y-m-d H:i:s');
                     
@@ -47,12 +49,13 @@ class User_login extends Model
                         'user_login_id'     => $row['user_login_id'],
                         'last_login_time'   => date('Y-m-d H:i:s')
                     ];
-                    print_r($user_login_id);
-                    echo "<br>";
+                    // print_r($user_login_id);
+                    // echo "<br>";
                     print_r($last_login_time);exit;
-                    $query   = $this->db->query("UPDATE ".$this->table_name." SET last_login_time ='$last_login_time' WHERE user_login_id= '$user_login_id'");
-                    
+                    $query   = $this->db->query(" ".$this->table_name." SET last_login_time ='$last_login_time' WHERE user_login_id= '$user_login_id'");
+                    print_r($query);exit();
                     $this->db->close();
+                    die();
                     
                     session_start();
                     $_SESSION["pdk_session_status"] = true;
@@ -66,12 +69,14 @@ class User_login extends Model
                     print_r($_SESSION);exit;
                     return true;
                 } else {
+                    exit;
                     throw new \Exception('Please change your default password', 402);
                 }
             } else {
                 throw new \Exception("Invalid Password",401);
             }
         }else {
+            // print_r('user not exists'); exit;
             throw new \Exception('User does not exists',401);
         }
     }

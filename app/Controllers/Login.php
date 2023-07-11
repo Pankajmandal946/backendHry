@@ -42,7 +42,6 @@ class Login extends BaseController
             }
         } catch (\PDOException $e) {
             $response = [
-        
                 'success' => 0,
                 'code' => $e->getCode(),
                 'msg' => $e->getMessage()
