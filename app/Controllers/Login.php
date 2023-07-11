@@ -37,10 +37,10 @@ class Login extends BaseController
                     }
                 }
             } else {
-                print_r("bcs");exit;
+                // print_r("bcs");exit;
                 throw new \Exception('Please post request in json format or it can not be blank', 400);
             }
-        } catch (\PDOException $e) {
+        } catch (PDOException $e) {
             $response = [
                 'success' => 0,
                 'code' => $e->getCode(),
@@ -56,6 +56,7 @@ class Login extends BaseController
             ];
             http_response_code($e->getCode());
             echo json_encode($response);
-        }
+        } 
+        // echo view("login");
     }
 }

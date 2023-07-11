@@ -12,7 +12,7 @@
   <!-- Font Awesome -->
   <link rel="stylesheet" href="<?= base_url() ?>/theme/plugins/fontawesome-free/css/all.min.css">
   <!-- icheck bootstrap -->
-  <link rel="stylesheet" href="<?= base_url() ?>/theme/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
+  <!-- <link rel="stylesheet" href="<?= base_url() ?>/theme/plugins/icheck-bootstrap/icheck-bootstrap.min.css"> -->
   <!-- Theme style -->
   <link rel="stylesheet" href="<?= base_url() ?>/theme/dist/css/adminlte.min.css">
 </head>
@@ -109,7 +109,7 @@
   <!-- /.login-box -->
 
   <!-- jQuery -->
-  <script src="<?= base_url() ?>/theme/plugins/jquery/jquery.min.js"></script>
+  <script src="<?= base_url() ?>/theme/js/jquery.min.js"></script>
   <!-- Bootstrap 4 -->
   <script src="<?= base_url() ?>/theme/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
   <!-- AdminLTE App -->
