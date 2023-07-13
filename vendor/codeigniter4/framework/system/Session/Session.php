@@ -919,13 +919,18 @@ class Session implements SessionInterface
      */
     protected function startSession()
     {
-        if (ENVIRONMENT === 'testing') {
+        // if (ENVIRONMENT === 'testing') {
+        //     $_SESSION = [];
+
+        //     return;
+        // }
+
+        if (ENVIRONMENT === 'default') {
             $_SESSION = [];
 
             return;
         }
-
-        session_start(); // @codeCoverageIgnore
+        // session_start(); // @codeCoverageIgnore
     }
 
     /**

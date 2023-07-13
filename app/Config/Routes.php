@@ -34,10 +34,12 @@ $routes->set404Override();
 // $routes->match(['get', 'post'],'/about-us', 'sitecontrollers::about');
 // $routes->match(['get', 'post'],'/Dashboard', 'admin::Dashboard');
 
-$routes->match(['get', 'post'],'/', 'Login::Login', ['filter' => 'noauth']);
+$routes->match(['get', 'post'],'/Login', 'Login::Login', ['filter' => 'noauth']);
+$routes->match(['get', 'post'],'/validation_login', 'Login::validation_login',['filter' => 'noauth']);
 $routes->match(['get', 'post'],'/validation_login', 'Login::validation_login',['filter' => 'noauth']);
 
 // $routes->match(['get', 'post'], '/Dashboard', 'Home::Dashboard', ['filter' => 'auth']);
+$routes->match(['get', 'post'], '/', 'Home::Home', ['filter' => 'auth']);
 $routes->match(['get', 'post'], '/Home', 'Home::Home', ['filter' => 'auth']);
 
 

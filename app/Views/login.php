@@ -258,7 +258,7 @@
             }),
             success: function(response) {
               console.log(response);
-              // window.location.href = "http://localhost/pankaj/backendHry//Home";
+              return redirect('http://localhost/pankaj/backendHry/Home');
             },
             error: function(jqXHR, exception) {
               var msg = '';
